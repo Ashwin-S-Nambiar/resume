@@ -149,6 +149,10 @@ The website includes a "Print Resume" button that:
 
 Feel free to fork this project and customize it for your own resume. If you have suggestions for improvements, please open an issue or submit a pull request.
 
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) for details.
+
 ---
 
 **Made with ❤️ by Ashwin S Nambiar**
