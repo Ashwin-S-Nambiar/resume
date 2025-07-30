@@ -13,7 +13,7 @@ A clean, modern, and responsive resume website built with HTML and CSS. This pro
 
 ## 🚀 Live Demo
 
-Visit the live website: 
+Visit the live website: [ashwin-s-nambiar.github.io/resume](https://ashwin-s-nambiar.github.io/resume)
 
 ## 📁 Project Structure
 
