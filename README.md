@@ -1,15 +1,17 @@
 # Ashwin's Resume
 
-A clean, modern, and responsive resume website built with HTML and CSS. This project showcases my professional experience, projects, education, certifications, and skills in a beautifully designed web format.
+A clean, modern, and responsive resume website built with HTML and CSS. This project showcases my professional experience, projects, education, certifications, and skills in a beautifully designed web format with dark mode support.
 
 ## 🌟 Features
 
 - **Responsive Design**: Optimized for all devices from desktop to mobile
+- **Dark Mode Toggle**: Switch between light and dark themes with persistence via localStorage
 - **Clean Typography**: Uses Fira Sans font for excellent readability
 - **Print-Friendly**: Includes a print button and optimized print styles
-- **Modern Styling**: Subtle animations and hover effects
-- **Accessibility**: Semantic HTML structure and proper contrast ratios
+- **Modern Styling**: Subtle animations and hover effects with smooth theme transitions
+- **Accessibility**: Semantic HTML structure and proper contrast ratios for both themes
 - **Fast Loading**: Minimal dependencies and optimized assets
+- **Theme Persistence**: Remembers your theme preference across browser sessions
 
 ## 🚀 Live Demo
 
@@ -19,19 +21,22 @@ Visit the live website: [ashwin-s-nambiar.github.io/resume](https://ashwin-s-nam
 
 ```
 resume/
-├── index.html              # Main HTML file with resume content
-├── style.css               # Comprehensive styling with responsive design
+├── index.html              # Main HTML file with resume content and JavaScript
+├── style.css               # Comprehensive styling with responsive design and theming
 ├── images/                 # Directory for images and assets
+│   ├── favicon.ico         # Website favicon
 │   └── organization.svg    # Company logo placeholder
+├── LICENSE                 # MIT License file
 └── README.md               # Project documentation
 ```
 
 ## 🛠️ Technologies Used
 
 - **HTML5**: Semantic markup for content structure
-- **CSS3**: Modern styling with Flexbox, Grid, and media queries
+- **CSS3**: Modern styling with Flexbox, Grid, CSS Custom Properties, and media queries
+- **JavaScript**: Theme switching functionality and localStorage management
 - **Google Fonts**: Fira Sans font family
-- **SVG Icons**: Scalable vector graphics for logos and icons
+- **SVG Icons**: Scalable vector graphics for logos and theme toggle icons
 
 ## 📱 Responsive Breakpoints
 
@@ -49,17 +54,26 @@ The website is fully responsive with optimized layouts for:
 ### Layout
 - Flexible grid system for projects and skills sections
 - Consistent spacing and typography
-- Professional color scheme with blue accent colors
+- Adaptive color scheme with CSS custom properties for light and dark themes
 
 ### Interactive Elements
+- Dark/Light mode toggle with smooth transitions
+- Theme preference persistence using localStorage
 - Hover effects on links and buttons
 - Smooth transitions and animations
-- Print button with custom styling
+- Dual print and theme toggle buttons with responsive positioning
+
+### Theme Support
+- **Light Theme**: Clean white background with blue accent colors
+- **Dark Theme**: Dark background (#1a1a1a) with light text and blue accent colors
+- **Smart Contrast**: Optimized text and background contrast ratios for both themes
+- **Print Optimization**: Automatically switches to light theme for printing
 
 ### Print Optimization
 - A4 page format optimization
 - Adjusted margins and font sizes
-- Grayscale-friendly design
+- Forced light theme for better print readability
+- Hidden interactive elements during print
 
 ## 🚀 Getting Started
 
@@ -105,12 +119,41 @@ php -S localhost:8000
 ### Styling Changes
 1. Open `style.css` to modify colors, fonts, or layout
 2. The CSS is well-commented and organized by sections
-3. Media queries are included for responsive adjustments
+3. Use CSS custom properties at the top of the file to modify theme colors
+4. Media queries are included for responsive adjustments
+
+### Theme Customization
+1. Modify the CSS custom properties in the `:root` and `[data-theme="dark"]` selectors
+2. Update `--bg-color`, `--text-color`, `--link-color`, etc. to your preferred colors
+3. The theme system automatically applies changes to both light and dark modes
+4. Ensure proper contrast ratios for accessibility
 
 ### Adding New Sections
 1. Follow the existing HTML structure patterns
-2. Add corresponding CSS styles
+2. Add corresponding CSS styles using the theme variables
 3. Ensure responsive design is maintained
+4. Test in both light and dark themes
+
+## 🌙 Dark Mode
+
+The website features a comprehensive dark mode implementation:
+
+### Features
+- **Toggle Button**: Positioned in the top-right corner next to the print button
+- **Smart Icons**: Sun icon for switching to dark mode, moon icon for switching to light mode
+- **Persistence**: Theme preference is saved in localStorage and persists across browser sessions
+- **Smooth Transitions**: All color changes are animated with CSS transitions
+- **Print-Safe**: Automatically uses light theme for printing regardless of current theme
+
+### Usage
+- Click the theme toggle button in the top-right corner
+- Your preference will be automatically saved
+- The page will remember your choice when you return
+
+### Implementation
+- Uses CSS custom properties (CSS variables) for easy theme switching
+- JavaScript handles theme detection, switching, and localStorage management
+- Responsive design ensures toggle button works on all screen sizes
 
 ## 🖨️ Printing
 
@@ -129,6 +172,7 @@ The website includes a "Print Resume" button that:
 - **Education**: Academic background
 - **Certifications**: Professional certifications
 - **Skills**: Technical skills organized by category
+- **Interactive Elements**: Dark/Light mode toggle and print functionality
 
 ## 🌐 Browser Support
 
