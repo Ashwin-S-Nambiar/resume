@@ -977,6 +977,15 @@ button#fit-to-print svg {
 		size: A4 portrait;
 		page-break-before: always;
 		margin: 0.5in;
+		/* Hide browser headers and footers */
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+	
+	/* Remove browser default headers/footers */
+	html {
+		-webkit-print-color-adjust: exact;
+		print-color-adjust: exact;
 	}
 	
 	/* Force light theme for printing */
@@ -987,9 +996,10 @@ button#fit-to-print svg {
 	
 	button#theme-toggle,
 	button#fit-to-print,
-	.button-container {
-		display: none;
-		visibility: hidden;
+	.button-container,
+	#print-modal {
+		display: none !important;
+		visibility: hidden !important;
 	}
 	
 	a {
