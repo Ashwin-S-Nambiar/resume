@@ -421,6 +421,18 @@
       </button>
     </div>
 
+    <!-- Print Instructions Modal -->
+    <div id="print-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
+      <div style="background: white; padding: 2em; border-radius: 8px; max-width: 500px; margin: 1em; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h3 style="margin-top: 0; color: #333;">Print Settings Tip</h3>
+        <p id="print-instructions" style="color: #666; line-height: 1.5; margin-bottom: 1.5em;"></p>
+        <div style="display: flex; gap: 1em; justify-content: flex-end;">
+          <button onclick="closePrintModal()" style="padding: 0.5em 1em; border: 1px solid #ddd; background: white; border-radius: 4px; cursor: pointer;">Cancel</button>
+          <button onclick="proceedToPrint()" style="padding: 0.5em 1em; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer;">Print Now</button>
+        </div>
+      </div>
+    </div>
+
     <script>
       // Theme functionality
       const themeToggle = document.getElementById('theme-toggle');
@@ -459,8 +471,37 @@
 
       // Print functionality
       document.getElementById('fit-to-print').addEventListener('click', function() {
-        window.print();
+        showPrintModal();
       });
+
+      function showPrintModal() {
+        const modal = document.getElementById('print-modal');
+        const instructions = document.getElementById('print-instructions');
+        const userAgent = navigator.userAgent;
+        
+        let instructionText = '';
+        if (userAgent.includes('Chrome') || userAgent.includes('Chromium')) {
+          instructionText = 'For the best print result without headers and footers:<br><br>1. In the print dialog, click "More settings"<br>2. Uncheck "Headers and footers"<br>3. Set margins to "Minimum"<br>4. Ensure "Background graphics" is checked';
+        } else if (userAgent.includes('Firefox')) {
+          instructionText = 'For the best print result without headers and footers:<br><br>1. In the print dialog, go to "Page Setup"<br>2. Set "Headers & Footers" to "Blank"<br>3. Adjust margins as needed<br>4. Enable "Print backgrounds"';
+        } else if (userAgent.includes('Safari')) {
+          instructionText = 'For the best print result without headers and footers:<br><br>1. In the print dialog, click the arrow next to printer name<br>2. Uncheck "Print headers and footers"<br>3. Adjust margins as needed<br>4. Enable "Print backgrounds"';
+        } else {
+          instructionText = 'For the best print result without headers and footers:<br><br>1. Look for "Headers and footers" option in print settings<br>2. Disable or set to blank<br>3. Adjust margins for best fit<br>4. Enable background printing if available';
+        }
+        
+        instructions.innerHTML = instructionText;
+        modal.style.display = 'flex';
+      }
+
+      function closePrintModal() {
+        document.getElementById('print-modal').style.display = 'none';
+      }
+
+      function proceedToPrint() {
+        closePrintModal();
+        window.print();
+      }
     </script>
   </body>
 </html>
