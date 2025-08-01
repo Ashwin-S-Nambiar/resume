@@ -240,10 +240,6 @@
                 Learning
               </li>
               <li>
-                Explored AI and ML, sparking interest in the field through
-                academic exposure
-              </li>
-              <li>
                 Participated in technical workshops and collaborated on
                 real-world-style group projects
               </li>
@@ -264,7 +260,7 @@
           </h3>
           <p class="org-link"><a href="https://scrimba.com" target="_blank">Scrimba</a> · January 2025</p>
           <p>
-            Comprehensive career path certification covering modern front-end development including HTML, CSS, JavaScript, React, TypeScript, Web APIs, Git, GitHub, responsive design, accessibility, and UI/UX design principles.
+            Comprehensive front-end development certification covering HTML, CSS, JavaScript, React, TypeScript, Web APIs, Git, responsive design, and accessibility.
           </p>
           <ul class="tag-list">
             <li>HTML</li>
@@ -286,7 +282,7 @@
           </h3>
           <p class="org-link"><a href="https://scrimba.com" target="_blank">Scrimba</a> · January 2025</p>
           <p>
-            Advanced React certification focusing on complex patterns, performance optimization, state management, Context API, custom hooks, and code splitting techniques for building scalable React applications.
+            Advanced React certification focusing on complex patterns, performance optimization, state management, Context API, and custom hooks.
           </p>
           <ul class="tag-list">
             <li>React</li>
@@ -306,7 +302,7 @@
           </h3>
           <p class="org-link"><a href="https://scrimba.com" target="_blank">Scrimba</a> · January 2025</p>
           <p>
-            TypeScript certification covering type definitions, interfaces, generics, enums, type assertions, and utility types for building type-safe JavaScript applications.
+            TypeScript certification covering type definitions, interfaces, generics, enums, and utility types for type-safe JavaScript applications.
           </p>
           <ul class="tag-list">
             <li>TypeScript</li>
@@ -326,7 +322,7 @@
           </h3>
           <p class="org-link"><a href="https://www.coursera.org/google-career-certificates" target="_blank">Google via Coursera</a> · April 2024</p>
           <p>
-            Professional certificate program covering cybersecurity fundamentals, network security, system administration, incident response, risk management, and security operations.
+            Professional certificate covering cybersecurity fundamentals, network security, system administration, incident response, and risk management.
           </p>
           <ul class="tag-list">
             <li>Cybersecurity</li>
@@ -346,15 +342,15 @@
           </h3>
           <p class="org-link"><a href="https://www.efset.org/" target="_blank">EF Standard English Test</a> · November 2020</p>
           <p>
-            English proficiency certification with a score of 74/100 (C2 Proficient level), demonstrating advanced English language skills in reading, listening, writing, and speaking.
+            English proficiency certification with C2 Proficient level (74/100), demonstrating advanced language skills.
           </p>
           <ul class="tag-list">
             <li>English Proficiency</li>
             <li>C2 Level</li>
-            <li>Reading Comprehension</li>
-            <li>Listening Comprehension</li>
-            <li>Writing Skills</li>
-            <li>Speaking Skills</li>
+            <li>Reading</li>
+            <li>Listening</li>
+            <li>Writing</li>
+            <li>Speaking</li>
           </ul>
         </li>
       </ul>
@@ -412,25 +408,6 @@
         </svg>
         <span id="theme-text">Dark</span>
       </button>
-
-      <button id="fit-to-print">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M19 8H5c-1.66 0-3 1.34-3 3v6h4v4h12v-4h4v-6c0-1.66-1.34-3-3-3zm-3 11H8v-5h8v5zm3-7c-.55 0-1-.45-1-1s.45-1 1-1 1 .45 1 1-.45 1-1 1zm-1-9H6v4h12V3z"/>
-        </svg>
-        Print Resume
-      </button>
-    </div>
-
-    <!-- Print Instructions Modal -->
-    <div id="print-modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 1000; align-items: center; justify-content: center;">
-      <div style="background: white; padding: 2em; border-radius: 8px; max-width: 500px; margin: 1em; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        <h3 style="margin-top: 0; color: #333;">Print Settings Tip</h3>
-        <p id="print-instructions" style="color: #666; line-height: 1.5; margin-bottom: 1.5em;"></p>
-        <div style="display: flex; gap: 1em; justify-content: flex-end;">
-          <button onclick="closePrintModal()" style="padding: 0.5em 1em; border: 1px solid #ddd; background: white; border-radius: 4px; cursor: pointer;">Cancel</button>
-          <button onclick="proceedToPrint()" style="padding: 0.5em 1em; background: #007acc; color: white; border: none; border-radius: 4px; cursor: pointer;">Print Now</button>
-        </div>
-      </div>
     </div>
 
     <script>
@@ -468,40 +445,6 @@
       }
 
       themeToggle.addEventListener('click', toggleTheme);
-
-      // Print functionality
-      document.getElementById('fit-to-print').addEventListener('click', function() {
-        showPrintModal();
-      });
-
-      function showPrintModal() {
-        const modal = document.getElementById('print-modal');
-        const instructions = document.getElementById('print-instructions');
-        const userAgent = navigator.userAgent;
-        
-        let instructionText = '';
-        if (userAgent.includes('Chrome') || userAgent.includes('Chromium')) {
-          instructionText = 'For the best print result without headers and footers:<br><br>1. In the print dialog, click "More settings"<br>2. Uncheck "Headers and footers"<br>3. Set margins to "Minimum"<br>4. Ensure "Background graphics" is checked';
-        } else if (userAgent.includes('Firefox')) {
-          instructionText = 'For the best print result without headers and footers:<br><br>1. In the print dialog, go to "Page Setup"<br>2. Set "Headers & Footers" to "Blank"<br>3. Adjust margins as needed<br>4. Enable "Print backgrounds"';
-        } else if (userAgent.includes('Safari')) {
-          instructionText = 'For the best print result without headers and footers:<br><br>1. In the print dialog, click the arrow next to printer name<br>2. Uncheck "Print headers and footers"<br>3. Adjust margins as needed<br>4. Enable "Print backgrounds"';
-        } else {
-          instructionText = 'For the best print result without headers and footers:<br><br>1. Look for "Headers and footers" option in print settings<br>2. Disable or set to blank<br>3. Adjust margins for best fit<br>4. Enable background printing if available';
-        }
-        
-        instructions.innerHTML = instructionText;
-        modal.style.display = 'flex';
-      }
-
-      function closePrintModal() {
-        document.getElementById('print-modal').style.display = 'none';
-      }
-
-      function proceedToPrint() {
-        closePrintModal();
-        window.print();
-      }
     </script>
   </body>
 </html>
