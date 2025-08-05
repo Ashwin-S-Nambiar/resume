@@ -424,7 +424,36 @@ button#theme-toggle {
 	overflow: hidden;
 }
 
+button#layout-toggle {
+	position: relative;
+	top: 0;
+	right: 0;
+	padding: 8px 16px;
+	background: var(--theme-btn-bg);
+	color: var(--theme-btn-text);
+	border: 1px solid var(--text-muted);
+	border-radius: 6px;
+	cursor: pointer;
+	font-family: "Fira Sans", "Liberation Sans", sans-serif;
+	font-size: 0.85em;
+	font-weight: 500;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s ease;
+	min-width: fit-content;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
 button#theme-toggle:hover {
+	background: var(--theme-btn-hover);
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+button#layout-toggle:hover {
 	background: var(--theme-btn-hover);
 	transform: translateY(-1px);
 	box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -435,9 +464,69 @@ button#theme-toggle:active {
 	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
+button#layout-toggle:active {
+	transform: translateY(0);
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
 button#theme-toggle svg {
 	flex-shrink: 0;
 	transition: transform 0.3s ease;
+}
+
+button#layout-toggle svg {
+	flex-shrink: 0;
+	transition: transform 0.3s ease;
+}
+
+/* Two-column layout styles */
+[data-layout="two-column"] {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2em;
+	align-items: start;
+}
+
+[data-layout="two-column"] > header {
+	grid-column: 1 / -1; /* Header spans both columns */
+}
+
+[data-layout="two-column"] > section#basics {
+	grid-column: 1 / -1; /* Basics spans both columns */
+}
+
+[data-layout="two-column"] > section#work {
+	grid-column: 1; /* Work goes in left column */
+}
+
+[data-layout="two-column"] > section#projects {
+	grid-column: 2; /* Projects go in right column */
+	grid-row: 3; /* Start at the same row as work */
+}
+
+[data-layout="two-column"] > section#education {
+	grid-column: 2; /* Education goes in right column */
+}
+
+[data-layout="two-column"] > section#skills {
+	grid-column: 2; /* Skills go in right column below education */
+}
+
+[data-layout="two-column"] > section#certifications {
+	grid-column: 1; /* Certifications go in left column */
+}
+
+[data-layout="two-column"] > .button-container {
+	grid-column: 1 / -1; /* Button container spans both columns */
+}
+
+/* Adjust projects and skills grid to single column in two-column layout */
+[data-layout="two-column"] section#projects > ul {
+	grid-template-columns: 1fr;
+}
+
+[data-layout="two-column"] section#skills > ul {
+	grid-template-columns: 1fr;
 }
 
 /* Responsive design */
@@ -461,6 +550,11 @@ button#theme-toggle svg {
 		padding: 6px 14px;
 		font-size: 0.85em;
 	}
+	
+	button#layout-toggle {
+		padding: 6px 14px;
+		font-size: 0.85em;
+	}
 }
 
 /* Tablets */
@@ -480,6 +574,18 @@ button#theme-toggle svg {
 	section#skills > ul {
 		grid-template-columns: 1fr;
 		grid-gap: 0.8em;
+	}
+	
+	/* Force single column layout on tablets and smaller */
+	[data-layout="two-column"] {
+		display: flex;
+		flex-direction: column;
+		gap: 0.8em;
+	}
+	
+	[data-layout="two-column"] section#projects > ul,
+	[data-layout="two-column"] section#skills > ul {
+		grid-template-columns: 1fr;
 	}
 	
 	/* Header adjustments */
@@ -561,6 +667,17 @@ button#theme-toggle svg {
 			height: 14px;
 		}
 	}
+	
+	button#layout-toggle {
+		padding: 6px 12px;
+		font-size: 0.8em;
+		gap: 6px;
+		
+		svg {
+			width: 14px;
+			height: 14px;
+		}
+	}
 }
 
 /* Small tablets and large phones */
@@ -632,6 +749,11 @@ button#theme-toggle svg {
 	
 	/* Button positioning */
 	button#theme-toggle {
+		padding: 5px 10px;
+		font-size: 0.75em;
+	}
+	
+	button#layout-toggle {
 		padding: 5px 10px;
 		font-size: 0.75em;
 	}
@@ -755,6 +877,17 @@ button#theme-toggle svg {
 			height: 12px;
 		}
 	}
+	
+	button#layout-toggle {
+		padding: 4px 8px;
+		font-size: 0.7em;
+		gap: 4px;
+		
+		svg {
+			width: 12px;
+			height: 12px;
+		}
+	}
 }
 
 /* Stack buttons vertically on very small screens */
@@ -766,6 +899,11 @@ button#theme-toggle svg {
 	}
 	
 	button#theme-toggle {
+		padding: 6px 10px;
+		font-size: 0.75em;
+	}
+	
+	button#layout-toggle {
 		padding: 6px 10px;
 		font-size: 0.75em;
 	}
@@ -790,6 +928,27 @@ button#theme-toggle svg {
 		}
 		
 		#theme-text {
+			display: none;
+		}
+	}
+	
+	button#layout-toggle {
+		padding: 8px;
+		width: 40px;
+		height: 40px;
+		border-radius: 50%;
+		justify-content: center;
+		font-size: 0;
+		gap: 0;
+		min-width: 40px;
+		max-width: 40px;
+		
+		svg {
+			width: 16px;
+			height: 16px;
+		}
+		
+		#layout-text {
 			display: none;
 		}
 	}
@@ -863,6 +1022,17 @@ button#theme-toggle svg {
 			height: 14px;
 		}
 	}
+	
+	button#layout-toggle {
+		padding: 6px;
+		width: 36px;
+		height: 36px;
+		
+		svg {
+			width: 14px;
+			height: 14px;
+		}
+	}
 }
 
 @media print {
@@ -887,6 +1057,7 @@ button#theme-toggle svg {
 	}
 	
 	button#theme-toggle,
+	button#layout-toggle,
 	.button-container,
 	#print-modal {
 		display: none !important;
@@ -910,6 +1081,8 @@ button#theme-toggle svg {
 		background-color: white !important;
 		color: black !important;
 		gap: 0.3em;
+		display: flex !important;
+		flex-direction: column !important;
 	}
 	
 	/* Optimize header */

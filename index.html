@@ -399,6 +399,15 @@
     </section>
 
     <div class="button-container">
+      <button id="layout-toggle">
+        <svg id="single-column-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M3 3h18v2H3V3zm0 4h18v2H3V7zm0 4h18v2H3v-2zm0 4h18v2H3v-2zm0 4h18v2H3v-2z"/>
+        </svg>
+        <svg id="two-column-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor" style="display: none;">
+          <path d="M3 3h8v2H3V3zm10 0h8v2h-8V3zM3 7h8v2H3V7zm10 0h8v2h-8V7zM3 11h8v2H3v-2zm10 0h8v2h-8v-2zM3 15h8v2H3v-2zm10 0h8v2h-8v-2zM3 19h8v2H3v-2zm10 0h8v2h-8v-2z"/>
+        </svg>
+        <span id="layout-text">2 Columns</span>
+      </button>
       <button id="theme-toggle">
         <svg id="sun-icon" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 7c-2.76 0-5 2.24-5 5s2.24 5 5 5 5-2.24 5-5-2.24-5-5-5zM2 13h2c.55 0 1-.45 1-1s-.45-1-1-1H2c-.55 0-1 .45-1 1s.45 1 1 1zm18 0h2c.55 0 1-.45 1-1s-.45-1-1-1h-2c-.55 0-1 .45-1 1s.45 1 1 1zM11 2v2c0 .55.45 1 1 1s1-.45 1-1V2c0-.55-.45-1-1-1s-1 .45-1 1zm0 18v2c0 .55.45 1 1 1s1-.45 1-1v-2c0-.55-.45-1-1-1s-1 .45-1 1zM5.99 4.58c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0s.39-1.03 0-1.41L5.99 4.58zm12.37 12.37c-.39-.39-1.03-.39-1.41 0-.39.39-.39 1.03 0 1.41l1.06 1.06c.39.39 1.03.39 1.41 0 .39-.39.39-1.03 0-1.41l-1.06-1.06zm1.06-10.96c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06zM7.05 18.36c.39-.39.39-1.03 0-1.41-.39-.39-1.03-.39-1.41 0l-1.06 1.06c-.39.39-.39 1.03 0 1.41s1.03.39 1.41 0l1.06-1.06z"/>
@@ -418,10 +427,22 @@
       const themeText = document.getElementById('theme-text');
       const htmlElement = document.documentElement;
 
+      // Layout functionality
+      const layoutToggle = document.getElementById('layout-toggle');
+      const singleColumnIcon = document.getElementById('single-column-icon');
+      const twoColumnIcon = document.getElementById('two-column-icon');
+      const layoutText = document.getElementById('layout-text');
+      const bodyElement = document.body;
+
       // Check for saved theme preference or default to light mode
       const savedTheme = localStorage.getItem('theme') || 'light';
       htmlElement.setAttribute('data-theme', savedTheme);
       updateThemeButton(savedTheme);
+
+      // Check for saved layout preference or default to single column
+      const savedLayout = localStorage.getItem('layout') || 'single';
+      bodyElement.setAttribute('data-layout', savedLayout);
+      updateLayoutButton(savedLayout);
 
       function updateThemeButton(theme) {
         if (theme === 'dark') {
@@ -435,6 +456,18 @@
         }
       }
 
+      function updateLayoutButton(layout) {
+        if (layout === 'two-column') {
+          singleColumnIcon.style.display = 'none';
+          twoColumnIcon.style.display = 'block';
+          layoutText.textContent = '1 Column';
+        } else {
+          singleColumnIcon.style.display = 'block';
+          twoColumnIcon.style.display = 'none';
+          layoutText.textContent = '2 Columns';
+        }
+      }
+
       function toggleTheme() {
         const currentTheme = htmlElement.getAttribute('data-theme');
         const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -444,7 +477,17 @@
         updateThemeButton(newTheme);
       }
 
+      function toggleLayout() {
+        const currentLayout = bodyElement.getAttribute('data-layout');
+        const newLayout = currentLayout === 'two-column' ? 'single' : 'two-column';
+        
+        bodyElement.setAttribute('data-layout', newLayout);
+        localStorage.setItem('layout', newLayout);
+        updateLayoutButton(newLayout);
+      }
+
       themeToggle.addEventListener('click', toggleTheme);
+      layoutToggle.addEventListener('click', toggleLayout);
     </script>
   </body>
 </html>
