@@ -187,7 +187,7 @@ The website includes a "Print Resume" button that:
 **Ashwin S Nambiar**
 - Email: [ashwinnambiar12345@gmail.com](mailto:ashwinnambiar12345@gmail.com)
 - GitHub: [github.com/Ashwin-S-Nambiar](https://github.com/Ashwin-S-Nambiar)
-- Website: [ashwin-s-nambiar.is-a.dev](https://ashwin.co.in)
+- Website: [ashwin.co.in](https://ashwin.co.in)
 
 ## 🤝 Contributing
 
