@@ -15,7 +15,7 @@ A clean, modern, and responsive resume website built with HTML and CSS. This pro
 
 ## 🚀 Live Demo
 
-Visit the live website: [ashwin-s-nambiar.github.io/resume](https://ashwin-s-nambiar.github.io/resume)
+Visit the live website: [View Site](https://ashwin-s-nambiar.github.io/resume)
 
 ## 📁 Project Structure
 
@@ -198,5 +198,7 @@ Feel free to fork this project and customize it for your own resume. If you have
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) for details.
 
 ---
-
+<div align="center">
+  
 **Made with ❤️ by Ashwin S Nambiar**
+</div>
