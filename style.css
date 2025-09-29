@@ -1098,3 +1098,10 @@ button#theme-toggle svg {
 		overflow: visible !important;
 	}
 }
+
+/* Hide header separators on small screens */
+@media (max-width: 640px) {
+  body > header address .separator {
+    display: none;
+  }
+}
