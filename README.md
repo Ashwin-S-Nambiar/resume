@@ -1,13 +1,12 @@
 # Ashwin's Resume
 
-A clean, modern, and responsive resume website built with HTML and CSS. This project showcases my professional experience, projects, education, certifications, and skills in a beautifully designed web format with dark mode support.
+A clean, minimal, and responsive resume website built with HTML and CSS. This project showcases my professional experience, projects, education, certifications, and skills in a beautifully designed web format with dark mode support.
 
 ## 🌟 Features
 
 - **Responsive Design**: Optimized for all devices from desktop to mobile
 - **Dark Mode Toggle**: Switch between light and dark themes with persistence via localStorage
 - **Clean Typography**: Uses Fira Sans font for excellent readability
-- **Print-Friendly**: Includes a print button and optimized print styles
 - **Modern Styling**: Subtle animations and hover effects with smooth theme transitions
 - **Accessibility**: Semantic HTML structure and proper contrast ratios for both themes
 - **Fast Loading**: Minimal dependencies and optimized assets
@@ -61,19 +60,12 @@ The website is fully responsive with optimized layouts for:
 - Theme preference persistence using localStorage
 - Hover effects on links and buttons
 - Smooth transitions and animations
-- Dual print and theme toggle buttons with responsive positioning
+- Theme toggle button with responsive positioning
 
 ### Theme Support
 - **Light Theme**: Clean white background with blue accent colors
 - **Dark Theme**: Dark background (#1a1a1a) with light text and blue accent colors
 - **Smart Contrast**: Optimized text and background contrast ratios for both themes
-- **Print Optimization**: Automatically switches to light theme for printing
-
-### Print Optimization
-- A4 page format optimization
-- Adjusted margins and font sizes
-- Forced light theme for better print readability
-- Hidden interactive elements during print
 
 ## 🚀 Getting Started
 
@@ -143,7 +135,6 @@ The website features a comprehensive dark mode implementation:
 - **Smart Icons**: Sun icon for switching to dark mode, moon icon for switching to light mode
 - **Persistence**: Theme preference is saved in localStorage and persists across browser sessions
 - **Smooth Transitions**: All color changes are animated with CSS transitions
-- **Print-Safe**: Automatically uses light theme for printing regardless of current theme
 
 ### Usage
 - Click the theme toggle button in the top-right corner
@@ -154,14 +145,6 @@ The website features a comprehensive dark mode implementation:
 - Uses CSS custom properties (CSS variables) for easy theme switching
 - JavaScript handles theme detection, switching, and localStorage management
 - Responsive design ensures toggle button works on all screen sizes
-
-## 🖨️ Printing
-
-The website includes a "Print Resume" button that:
-- Optimizes the layout for A4 paper
-- Removes interactive elements
-- Adjusts colors for print media
-- Maintains professional formatting
 
 ## 📄 Sections Included
 
