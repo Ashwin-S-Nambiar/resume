@@ -2,7 +2,7 @@
 
 A clean, minimal, and responsive resume website built with HTML and CSS. This project showcases my professional experience, projects, education, certifications, and skills in a beautifully designed web format with dark mode support.
 
-## 🌟 Features
+## Features
 
 - **Responsive Design**: Optimized for all devices from desktop to mobile
 - **Dark Mode Toggle**: Switch between light and dark themes with persistence via localStorage
@@ -12,11 +12,11 @@ A clean, minimal, and responsive resume website built with HTML and CSS. This pr
 - **Fast Loading**: Minimal dependencies and optimized assets
 - **Theme Persistence**: Remembers your theme preference across browser sessions
 
-## 🚀 Live Demo
+## Live Demo
 
 Visit the live website: [View Site](https://resume.ashwin.co.in)
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 resume/
@@ -29,7 +29,7 @@ resume/
 └── README.md               # Project documentation
 ```
 
-## 🛠️ Technologies Used
+## Technologies Used
 
 - **HTML5**: Semantic markup for content structure
 - **CSS3**: Modern styling with Flexbox, Grid, CSS Custom Properties, and media queries
@@ -37,7 +37,7 @@ resume/
 - **Google Fonts**: Fira Sans font family
 - **SVG Icons**: Scalable vector graphics for logos and theme toggle icons
 
-## 📱 Responsive Breakpoints
+## Responsive Breakpoints
 
 The website is fully responsive with optimized layouts for:
 
@@ -48,7 +48,7 @@ The website is fully responsive with optimized layouts for:
 - **Mobile Small**: 360px - 480px
 - **Mobile XS**: Below 360px
 
-## 🎨 Design Features
+## Design Features
 
 ### Layout
 - Flexible grid system for projects and skills sections
@@ -67,7 +67,7 @@ The website is fully responsive with optimized layouts for:
 - **Dark Theme**: Dark background (#1a1a1a) with light text and blue accent colors
 - **Smart Contrast**: Optimized text and background contrast ratios for both themes
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -100,7 +100,7 @@ php -S localhost:8000
 
 4. Visit `http://localhost:8000` in your browser
 
-## 📝 Customization
+## Customization
 
 ### Content Updates
 1. Open `index.html` in your preferred editor
@@ -126,7 +126,7 @@ php -S localhost:8000
 3. Ensure responsive design is maintained
 4. Test in both light and dark themes
 
-## 🌙 Dark Mode
+## Dark Mode
 
 The website features a comprehensive dark mode implementation:
 
@@ -146,7 +146,7 @@ The website features a comprehensive dark mode implementation:
 - JavaScript handles theme detection, switching, and localStorage management
 - Responsive design ensures toggle button works on all screen sizes
 
-## 📄 Sections Included
+## Sections Included
 
 - **Header**: Name, title, and contact information
 - **About**: Professional summary
@@ -157,7 +157,7 @@ The website features a comprehensive dark mode implementation:
 - **Skills**: Technical skills organized by category
 - **Interactive Elements**: Dark/Light mode toggle and print functionality
 
-## 🌐 Browser Support
+## Browser Support
 
 - Chrome (recommended)
 - Firefox
@@ -165,18 +165,18 @@ The website features a comprehensive dark mode implementation:
 - Edge
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## 📞 Contact
+## Contact
 
 **Ashwin S Nambiar**
 - Email: [ashwinnambiar12345@gmail.com](mailto:ashwinnambiar12345@gmail.com)
 - GitHub: [github.com/Ashwin-S-Nambiar](https://github.com/Ashwin-S-Nambiar)
 - Website: [ashwin.co.in](https://ashwin.co.in)
 
-## 🤝 Contributing
+## Contributing
 
 Feel free to fork this project and customize it for your own resume. If you have suggestions for improvements, please open an issue or submit a pull request.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) for details.
 
