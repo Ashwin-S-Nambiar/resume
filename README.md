@@ -165,13 +165,6 @@ The website features a comprehensive dark mode implementation:
 - Edge
 - Mobile browsers (iOS Safari, Chrome Mobile)
 
-## Contact
-
-**Ashwin S Nambiar**
-- Email: [ashwinnambiar12345@gmail.com](mailto:ashwinnambiar12345@gmail.com)
-- GitHub: [github.com/Ashwin-S-Nambiar](https://github.com/Ashwin-S-Nambiar)
-- Website: [ashwin.co.in](https://ashwin.co.in)
-
 ## Contributing
 
 Feel free to fork this project and customize it for your own resume. If you have suggestions for improvements, please open an issue or submit a pull request.
