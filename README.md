@@ -22,8 +22,14 @@ Visit the live website: [View Site](https://resume.ashwin.co.in)
 resume/
 ├── index.html              # Main HTML file with resume content and JavaScript
 ├── style.css               # Comprehensive styling with responsive design and theming
+├── favicon.ico             # Website favicon (served from the site root)
+├── site.webmanifest        # Web app manifest (name, theme color, icons)
 ├── images/                 # Directory for images and assets
-│   ├── favicon.ico         # Website favicon
+│   ├── favicon-48x48.png   # PNG favicons and app icons in multiple sizes
+│   ├── favicon-96x96.png
+│   ├── icon-192x192.png
+│   ├── icon-512x512.png
+│   ├── apple-touch-icon.png
 │   └── organization.svg    # Company logo placeholder
 ├── LICENSE                 # MIT License file
 └── README.md               # Project documentation
