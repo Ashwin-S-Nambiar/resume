@@ -1,186 +1,95 @@
-# Ashwin's Resume
+<p align="center">
+  <a href="https://resume.ashwin.co.in">
+    <img src="./docs/screenshots/resume.webp" width="100%" alt="the resume on desktop: contact links, work at microdose, twiggle labs and meta scifor, and a two-column list of projects">
+  </a>
+</p>
 
-A clean, minimal, and responsive resume website built with HTML and CSS. This project showcases my professional experience, projects, education, certifications, and skills in a beautifully designed web format with dark mode support.
+<p align="center">
+  <a href="https://resume.ashwin.co.in"><strong>resume.ashwin.co.in</strong></a>
+  &nbsp;·&nbsp;
+  <a href="#what-it-does">what it does</a>
+  &nbsp;·&nbsp;
+  <a href="#the-design">the design</a>
+  &nbsp;·&nbsp;
+  <a href="#running-it">running it</a>
+</p>
 
-## Features
+<br>
 
-- **Responsive Design**: Optimized for all devices from desktop to mobile
-- **Dark Mode Toggle**: Switch between light and dark themes with persistence via localStorage
-- **Clean Typography**: Uses Fira Sans font for excellent readability
-- **Modern Styling**: Subtle animations and hover effects with smooth theme transitions
-- **Accessibility**: Semantic HTML structure and proper contrast ratios for both themes
-- **Fast Loading**: Minimal dependencies and optimized assets
-- **Theme Persistence**: Remembers your theme preference across browser sessions
+the source of **[resume.ashwin.co.in](https://resume.ashwin.co.in)**. my resume, on the web.
 
-## Live Demo
+work, projects, education, certifications and skills on one page. it is plain html and css, with a little javascript to remember which theme you picked. the content lives in the page itself, so updating a role or a project means editing one file.
 
-Visit the live website: [View Site](https://resume.ashwin.co.in)
+## what it does
 
-## Project Structure
+- **the resume.** current and past roles, selected projects, education and technical skills, with links to the live projects and certificates.
+- **contact.** email, github, portfolio and linkedin at the top.
+- **light and dark.** starts in light mode. the toggle saves your choice in `localStorage`, so it stays that way when you come back.
+- **print.** the browser's print command uses a compact, light layout and hides the theme toggle. save as pdf from the same dialog.
 
-```
-resume/
-├── index.html              # Main HTML file with resume content and JavaScript
-├── style.css               # Comprehensive styling with responsive design and theming
-├── favicon.ico             # Website favicon (served from the site root)
-├── site.webmanifest        # Web app manifest (name, theme color, icons)
-├── images/                 # Directory for images and assets
-│   ├── favicon-48x48.png   # PNG favicons and app icons in multiple sizes
-│   ├── favicon-96x96.png
-│   ├── icon-192x192.png
-│   ├── icon-512x512.png
-│   ├── apple-touch-icon.png
-│   └── organization.svg    # Company logo placeholder
-├── LICENSE                 # MIT License file
-└── README.md               # Project documentation
-```
+## the design
 
-## Technologies Used
+a document you can scroll through. thin rules separate the sections, blue marks the links, and small grey tags carry the technologies.
 
-- **HTML5**: Semantic markup for content structure
-- **CSS3**: Modern styling with Flexbox, Grid, CSS Custom Properties, and media queries
-- **JavaScript**: Theme switching functionality and localStorage management
-- **Google Fonts**: Fira Sans font family
-- **SVG Icons**: Scalable vector graphics for logos and theme toggle icons
+- **type.** fira sans for the text, courier for dates and tags. body text stays at a readable size on phones, and long links and tags wrap.
+- **layout.** work and education read from top to bottom. projects and skills sit in two columns on desktop and become one on smaller screens. the page has a maximum width, and the theme button has its own space in the header.
+- **themes.** white paper in light mode, charcoal in dark. both use the same layout and blue links.
+- **interaction.** larger touch targets on phones and touchscreens, visible keyboard focus, and a labelled theme button even when only its icon is shown.
+- **motion.** short colour transitions on the theme, links and tags, with underlines appearing on hover. reduced motion turns the transitions off.
 
-## Responsive Breakpoints
+<details>
+<summary><strong>dark mode and mobile</strong></summary>
 
-The website is fully responsive with optimized layouts for:
+<br>
 
-- **Desktop**: 1024px and above
-- **Tablets**: 768px - 1024px
-- **Mobile Large**: 640px - 768px
-- **Mobile Medium**: 480px - 640px
-- **Mobile Small**: 360px - 480px
-- **Mobile XS**: Below 360px
+<p align="center">
+  <img src="./docs/screenshots/resume-dark.webp" width="100%" alt="the same resume in dark mode, with a charcoal background, light text and blue project links">
+</p>
 
-## Design Features
+<p align="center">
+  <img src="./docs/screenshots/resume-mobile.webp" width="33%" alt="the resume on a phone: stacked contact links, the summary and work experience in a single column">
+</p>
 
-### Layout
-- Flexible grid system for projects and skills sections
-- Consistent spacing and typography
-- Adaptive color scheme with CSS custom properties for light and dark themes
+</details>
 
-### Interactive Elements
-- Dark/Light mode toggle with smooth transitions
-- Theme preference persistence using localStorage
-- Hover effects on links and buttons
-- Smooth transitions and animations
-- Theme toggle button with responsive positioning
+## the stack
 
-### Theme Support
-- **Light Theme**: Clean white background with blue accent colors
-- **Dark Theme**: Dark background (#1a1a1a) with light text and blue accent colors
-- **Smart Contrast**: Optimized text and background contrast ratios for both themes
+| layer | choices |
+| --- | --- |
+| page | html, with the resume written directly into it |
+| style | css nesting, grid, flexbox, custom properties and print rules |
+| interaction | vanilla javascript, `localStorage` for the theme |
+| type | fira sans from google fonts, with local fallbacks |
 
-## Getting Started
+## running it
 
-### Prerequisites
-
-- A modern web browser
-- Basic text editor (VS Code recommended)
-
-### Installation
-
-1. Clone the repository:
-```bash
+```sh
 git clone https://github.com/Ashwin-S-Nambiar/resume.git
-```
-
-2. Navigate to the project directory:
-```bash
 cd resume
+python3 -m http.server 8000
 ```
 
-3. Open `index.html` in your web browser or set up a local server:
-```bash
-# Using Python 3
-python -m http.server 8000
+open [localhost:8000](http://localhost:8000). no packages to install or build step. opening `index.html` directly works for reviewing the page too.
 
-# Using Node.js (if you have http-server installed)
-npx http-server
+## the shape of it
 
-# Using PHP
-php -S localhost:8000
+```text
+index.html        the resume and theme toggle
+style.css         layout, both themes, mobile and print rules
+images/           favicons, app icons and the organization icon
+favicon.ico       browser favicon
+site.webmanifest  app name, colours and icons
+docs/screenshots/ the README images
 ```
 
-4. Visit `http://localhost:8000` in your browser
+## updating it
 
-## Customization
+edit `index.html` for the content and links, `style.css` for the presentation. check desktop and phone widths, both themes, and print preview after a change. refresh the screenshots when the visible content changes.
 
-### Content Updates
-1. Open `index.html` in your preferred editor
-2. Update the personal information, work experience, projects, and skills
-3. Replace placeholder images in the `images/` directory
-4. Save and refresh your browser
+if you use it for your own resume, replace the contact links, canonical url, page description, icons and manifest details too.
 
-### Styling Changes
-1. Open `style.css` to modify colors, fonts, or layout
-2. The CSS is well-commented and organized by sections
-3. Use CSS custom properties at the top of the file to modify theme colors
-4. Media queries are included for responsive adjustments
-
-### Theme Customization
-1. Modify the CSS custom properties in the `:root` and `[data-theme="dark"]` selectors
-2. Update `--bg-color`, `--text-color`, `--link-color`, etc. to your preferred colors
-3. The theme system automatically applies changes to both light and dark modes
-4. Ensure proper contrast ratios for accessibility
-
-### Adding New Sections
-1. Follow the existing HTML structure patterns
-2. Add corresponding CSS styles using the theme variables
-3. Ensure responsive design is maintained
-4. Test in both light and dark themes
-
-## Dark Mode
-
-The website features a comprehensive dark mode implementation:
-
-### Features
-- **Toggle Button**: Positioned in the top-right corner next to the print button
-- **Smart Icons**: Sun icon for switching to dark mode, moon icon for switching to light mode
-- **Persistence**: Theme preference is saved in localStorage and persists across browser sessions
-- **Smooth Transitions**: All color changes are animated with CSS transitions
-
-### Usage
-- Click the theme toggle button in the top-right corner
-- Your preference will be automatically saved
-- The page will remember your choice when you return
-
-### Implementation
-- Uses CSS custom properties (CSS variables) for easy theme switching
-- JavaScript handles theme detection, switching, and localStorage management
-- Responsive design ensures toggle button works on all screen sizes
-
-## Sections Included
-
-- **Header**: Name, title, and contact information
-- **About**: Professional summary
-- **Work Experience**: Current and previous positions
-- **Projects**: Showcased development projects
-- **Education**: Academic background
-- **Certifications**: Professional certifications
-- **Skills**: Technical skills organized by category
-- **Interactive Elements**: Dark/Light mode toggle and print functionality
-
-## Browser Support
-
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
-- Mobile browsers (iOS Safari, Chrome Mobile)
-
-## Contributing
-
-Feel free to fork this project and customize it for your own resume. If you have suggestions for improvements, please open an issue or submit a pull request.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) for details.
+[mit](LICENSE).
 
 ---
-<div align="center">
-  
-**Made with ❤️ by Ashwin S Nambiar**
-</div>
+
+[resume.ashwin.co.in](https://resume.ashwin.co.in) · [ashwin.co.in](https://ashwin.co.in) · [notes](https://inspect.ashwin.co.in) · [x](https://x.com/ashwinnambiar11) · [github](https://github.com/Ashwin-S-Nambiar)
