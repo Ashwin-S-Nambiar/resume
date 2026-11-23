@@ -230,6 +230,34 @@ section#education {
 	}
 }
 
+.product-link {
+	color: var(--link-color);
+	white-space: nowrap;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 0.15em;
+	transition: color 0.3s ease;
+
+	&:is(:hover, :focus-visible) {
+		color: var(--link-hover);
+	}
+
+	.external-link {
+		display: inline-block;
+	}
+}
+
+.external-link {
+	font-size: 0.8em;
+	opacity: 0.7;
+	transition: opacity 0.2s ease;
+}
+
+a:hover > .external-link,
+.product-link:focus-visible > .external-link {
+	opacity: 1;
+}
+
 section#projects,
 section#skills {
 	& > ul {
@@ -272,16 +300,6 @@ section#skills {
 				
 				a:hover::after {
 					width: calc(100% - 1.2em);
-				}
-				
-				.external-link {
-					font-size: 0.8em;
-					opacity: 0.7;
-					transition: opacity 0.2s ease;
-				}
-				
-				a:hover .external-link {
-					opacity: 1;
 				}
 			}
 			
@@ -327,16 +345,6 @@ section#certifications {
 			
 			a:hover::after {
 				width: calc(100% - 1.2em);
-			}
-			
-			.external-link {
-				font-size: 0.8em;
-				opacity: 0.7;
-				transition: opacity 0.2s ease;
-			}
-			
-			a:hover .external-link {
-				opacity: 1;
 			}
 		}
 		

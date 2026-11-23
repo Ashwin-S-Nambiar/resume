@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://resume.ashwin.co.in">
-    <img src="./docs/screenshots/resume.webp" width="100%" alt="the resume on desktop: contact links, work at microdose, twiggle labs and meta scifor, and a two-column list of projects">
+    <img src="./docs/screenshots/resume.webp" width="100%" alt="the resume on desktop: contact links, work at thoughtful engineering, twiggle labs and meta scifor, and a two-column list of projects">
   </a>
 </p>
 
